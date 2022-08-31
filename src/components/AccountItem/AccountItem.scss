@@ -1,0 +1,40 @@
+.account {
+  transition: all 0.2s linear;
+  &:hover {
+    background-color: rgba($color: #cccc, $alpha: 0.25);
+    cursor: pointer;
+  }
+  &-item {
+    display: flex;
+    align-items: center;
+    padding: 9px 16px;
+  }
+  &-avatar {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 100rem;
+    margin-right: 10px;
+  }
+  &-content {
+  }
+  &-name {
+    display: flex;
+    align-items: center;
+    span {
+      font-weight: 600;
+      line-height: calc(22 / 16);
+      font-size: 1.6rem;
+      margin-right: 10px;
+    }
+  }
+  &-verified {
+    color: #33ff66;
+    font-size: 1.2rem;
+  }
+  &-desc {
+    font-size: 1.4rem;
+    line-height: calc(20 / 14);
+    opacity: 0.75;
+  }
+}

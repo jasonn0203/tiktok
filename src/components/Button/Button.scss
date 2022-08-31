@@ -1,0 +1,112 @@
+$primaryColor: #fe2c55;
+.button {
+  border-radius: 4px;
+  min-width: 100px;
+  height: 36px;
+  padding: 6px 8px;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  transition: all 0.25s linear;
+  line-height: calc(22 / 16);
+  //   If it has the next button, it will add margin to the left
+  + .button {
+    margin-left: 10px;
+  }
+  span {
+    font-size: 1.6rem;
+    font-weight: 700;
+  }
+  &.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+}
+.rounded {
+  padding: 0 8px;
+  min-width: 90px;
+  height: 32px;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 6%);
+  border-radius: 52px;
+  cursor: pointer;
+  color: #161823bf;
+  line-height: calc(30 / 14);
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.4rem;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: #fff;
+  border: 1px solid #1618231f;
+}
+.primary {
+  background-color: $primaryColor;
+  color: white;
+}
+.big-primary {
+  color: #fff;
+  border-color: #fff;
+  background-color: $primaryColor;
+}
+
+.outline {
+  background-color: transparent;
+  border: 1px solid $primaryColor;
+  min-width: 88px;
+}
+.big-outline {
+  border-width: 1px;
+  border-style: solid;
+  color: $primaryColor;
+  border-color: $primaryColor;
+  background-color: #fff;
+}
+.big-primary,
+.big-outline {
+  min-width: 168px;
+  width: 100%;
+  min-height: 48px;
+  font-size: 1.8rem;
+  line-height: calc(25 / 18);
+  font-weight: 600;
+}
+.text {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.6rem;
+  line-height: calc(24 / 16);
+  color: #161823;
+  position: relative;
+  &:hover {
+    color: $primaryColor;
+  }
+  &:hover::before {
+    width: 100%;
+    left: 0;
+    background-color: $primaryColor;
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    width: 10px;
+    height: 2px;
+    left: 50%;
+    bottom: 0;
+    position: absolute;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    background-color: #161823;
+  }
+}
+// Hover effect
+.big-outline:hover,
+.outline:hover {
+  background-color: #fe2c550f;
+}
+.primary:hover,
+.big-primary:hover {
+  background: linear-gradient(0deg, #0000000f, #0000000f), #fe2c55;
+}
