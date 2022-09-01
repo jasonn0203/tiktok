@@ -110,11 +110,24 @@ $btn-width: 52px;
           right: calc($btn-width + 8px);
           // display: none;
         }
+        &-close {
+          z-index: 100;
+        }
       }
     }
   }
   .controls {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    .menu {
+      &-dot {
+        margin-left: 16px;
+        cursor: pointer;
+        font-size: 2rem;
+        padding: 8px;
+        min-width: 20px;
+      }
+    }
   }
 }

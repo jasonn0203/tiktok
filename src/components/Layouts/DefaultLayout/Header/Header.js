@@ -1,17 +1,22 @@
 import React from "react";
 import { useState } from "react";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCircleXmark,
+  faEllipsisVertical,
   faMagnifyingGlass,
   faSpinner,
 } from "@fortawesome/free-solid-svg-icons";
 import Tippy from "@tippyjs/react/headless";
 
 import "./Header.scss";
+
 import { Popper as PopperWrapper } from "~/components/Popper";
 import { AccountItem } from "~/components/AccountItem";
 import Button from "~/components/Button/Button";
+import MenuItem from "~/components/MenuItem/MenuItem";
+import PopperMenu from "~/components/Popper/PopperMenu/PopperMenu";
 
 const Header = () => {
   const [searchResults, setSearchResult] = useState([]);
@@ -26,7 +31,7 @@ const Header = () => {
         </a>
 
         <Tippy
-          interactive="true"
+          interactive
           visible
           render={(attrs) => (
             <div className="search-result" tabIndex="-1" {...attrs}>
@@ -59,12 +64,18 @@ const Header = () => {
           <Button type="text" to="/">
             Upload
           </Button>
-          <Button type="primary disabled" to="/following">
+          <Button type="primary" to="/">
             Log in
           </Button>
           <Button type="rounded" to="/">
             Get the app
           </Button>
+
+          <PopperMenu>
+            <div className="menu-dot">
+              <FontAwesomeIcon icon={faEllipsisVertical} />
+            </div>
+          </PopperMenu>
         </div>
       </div>
     </header>
